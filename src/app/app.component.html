@@ -1,0 +1,14 @@
+<nav class="w-screen h-[60px] bg-slate-800 text-white fixed top-0">
+  <div class="flex items-center container h-full mx-auto gap-8">
+    <a routerLink="/home">Home</a>
+    <a routerLink="/users">Users</a>
+  </div>
+</nav>
+<div class="w-screen h-screen overflow-hidden flex flex-col">
+  <div class="p-8 mt-[60px] flex-1">
+    <router-outlet></router-outlet>
+  </div>
+  <footer class="py-8">
+    <h3 class="text-3xl font-medium text-center">Angular CRUD</h3>
+  </footer>
+</div>

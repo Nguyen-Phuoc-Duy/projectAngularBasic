@@ -1,0 +1,15 @@
+th, td {
+    @apply text-center py-2 border-gray-200 border
+}
+ button {
+    @apply px-2 py-1 rounded-md text-white transition-all
+}
+.btn-edit {
+    @apply bg-blue-500 hover:bg-blue-600
+}
+.btn-delete {
+    @apply bg-rose-500 hover:bg-rose-600
+}
+.btn-add {
+    @apply bg-emerald-800 hover:bg-emerald-900 px-4 py-2
+}

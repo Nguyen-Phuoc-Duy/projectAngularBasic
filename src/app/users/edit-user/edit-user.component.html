@@ -1,0 +1,73 @@
+<div class="flex flex-col gap-8">
+    <h1 class="text-4xl font-bold">Edit user</h1>
+    <div>
+        <form [formGroup]="editForm" (ngSubmit)="onSubmit()" class="flex flex-col gap-8">
+            <div class="flex gap-8">
+                <div class="flex flex-col gap-4">
+                    <label class="text-base font-medium" for="firstName">First Name</label>
+                    <input class="outline-none border border-slate-300 rounded-md px-4 py-2 focus:border-slate-500"
+                        id="firstName" type="text" placeholder="firstName" formControlName="firstName" />
+                    <div class="text-base text-rose-500"
+                        *ngIf="(editForm.get('firstName')?.errors?.['required'] && editForm.controls['firstName'].touched)">
+                        <p>
+                            First Name is requiled
+                        </p>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <label class="text-base font-medium" for="lastName">Last Name</label>
+                    <input class="outline-none border border-slate-300 rounded-md px-4 py-2 focus:border-slate-500"
+                        id="lastName" type="text" placeholder="lastName" formControlName="lastName" />
+                    <div class="text-base text-rose-500"
+                        *ngIf="(editForm.get('lastName')?.errors?.['required'] && editForm.controls['lastName'].touched)">
+                        <p>
+                            Last Name is requiled
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex gap-8">
+                <div class="flex flex-col gap-4">
+                    <label class="text-base font-medium" for="username">User Name</label>
+                    <input class="outline-none border border-slate-300 rounded-md px-4 py-2 focus:border-slate-500"
+                        id="username" type="text" placeholder="username" formControlName="username" />
+                    <div class="text-base text-rose-500"
+                        *ngIf="(editForm.get('username')?.errors?.['required'] && editForm.controls['username'].touched)">
+                        <p>editForm
+                            Username is requiled
+                        </p>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <label class="text-base font-medium" for="password">Password</label>
+                    <input class="outline-none border border-slate-300 rounded-md px-4 py-2 focus:border-slate-500"
+                        id="password" type="password" placeholder="password" formControlName="password" />
+                        <div class="text-base text-rose-500"
+                        *ngIf="(editForm.get('confirmPassword')?.errors?.['minlength'] && editForm.controls['confirmPassword'].dirty)">
+                        <p>
+                            Confirm Password must be at least 6 characters
+                        </p>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <label class="text-base font-medium" for="confirmPassword">Confirm Password</label>
+                    <input class="outline-none border border-slate-300 rounded-md px-4 py-2 focus:border-slate-500"
+                        id="confirmPassword" type="password" placeholder="confirmPassword"
+                        formControlName="confirmPassword" />
+                        <div class="text-base text-rose-500"
+                        *ngIf="(editForm.get('confirmPassword')?.errors?.['minlength'] && editForm.controls['confirmPassword'].dirty)">
+                        <p>
+                            Confirm Password must be at least 6 characters
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex gap-8 items-center">
+                <button [disabled]="editForm.invalid"
+                [ngClass]="{disabled: editForm.invalid}"
+                    class="btn-submit px-4 py-2 rounded-md bg-blue-500 hover:bg-blue-600 text-white" type="submit">Submit</button>
+                <a routerLink="/users" class="text-blue-500 hover:text-blue-600 underline underline-offset-2">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
